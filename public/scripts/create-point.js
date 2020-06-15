@@ -54,10 +54,11 @@ function getCities(event) {
 
   const collectedItems = document.querySelector("input[name=items]")
 
-  let selectedItem = []
+  let selectedItems = []
 
   function handleSelectedItem(event) {
     const itemLi = event.target
+    console.log(selectedItems)
 
     //Adicionar ou remover uma classe com javascript
     itemLi.classList.toggle("selected")

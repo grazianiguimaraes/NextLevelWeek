@@ -3,6 +3,9 @@ const sqlite3 = require("sqlite3").verbose()
 //Cria o objeto que irá fazer operações no Banco de Dados
 const db = new sqlite3.Database("./src/database/database.db")
 
+module.exports = db
+
+/*
 db.serialize(() => {
 
 
@@ -33,7 +36,7 @@ db.serialize(() => {
       ) VALUES (?,?,?,?,?,?,?);
    `
   const values = [
-    "https://i1.wp.com/www.usc.edu.br/circulodigital/wp-content/uploads/2016/05/reciclagem_2.jpg",
+    "https://blog.sulprint.com.br/wp-content/uploads/2017/10/entenda-como-funciona-a-reciclagem-de-embalagens-780x450.jpeg",
     "Coletoria",
     "XXXX X XXXXXXXXXX DDDDDDD ajkjdshdkjahdh dhsadhkasjd kasj hdkjahda",
     "Numero",
@@ -59,6 +62,7 @@ db.serialize(() => {
     console.log("Aqui estão seus registros: ")
     console.log(rows)
   })
+  
 
   db.run(`DELETE FROM places WHERE id = ?`, [1], function (err) {
     if (err) {
@@ -68,4 +72,7 @@ db.serialize(() => {
     console.log("Registro deletado com Sucesso !")
 
   })
+  
 })
+
+*/

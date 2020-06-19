@@ -14,31 +14,46 @@
   {% include "partials/page-header.html" %}
 
   <main>
-    <h4>
-      <strong>2 pontos</strong>
-      encontrados
-    </h4>
 
-    <div class="cards">
-      <div class="card">
-        <img src="https://i1.wp.com/www.usc.edu.br/circulodigital/wp-content/uploads/2016/05/reciclagem_2.jpg" alt="XXXXXXX">
-        <h1>Coletoria</h1>
-        <h3>Residuos, Eletronica, Lampâdas</h3>
-        <p>
-          XXXX X XXXXXXXXXX DDDDDDD ajkjdshdkjahdh dhsadhkasjd kasj hdkjahda Numero
+    {% if total > 0 %}
+
+      <h4>
+        <strong>{{ total }}
+          pontos</strong>
+        encontrados
+      </h4>
+
+      <div class="cards">
+
+        {% for place in places %}
+
+          <div class="card">
+            <img src="{{ place.image }}" alt="{{ place.name }}">
+            <h1>{{ place.name }}</h1>
+            <h3>{{ place.items }}</h3>
+            <p>
+              {{ place.city }},
+              {{ place.state }}
+            </br>
+            {{ place.address }},
+          </br>
+          {{ place.address2 }}
         </p>
       </div>
 
-      <div class="card">
-        <img src="https://blog.sulprint.com.br/wp-content/uploads/2017/10/entenda-como-funciona-a-reciclagem-de-embalagens-780x450.jpeg" alt="XXXXXXX">
-        <h1>Coletoria</h1>
-        <h3>Residuos, Eletronica, Lampâdas</h3>
-        <p>
-          XXXX X XXXXXXXXXX DDDDDDD ajkjdshdkjahdh dhsadhkasjd kasj hdkjahda Numero
-        </p>
-      </div>
+    {% endfor %}
+  </div>
 
-    </div>
-  </main>
+  {%else%}
 
-  {% endblock content %}
+  <h4>
+    <strong>Nenhum</strong>
+    local encontrado.
+  </h4>
+
+{% endif %}
+
+</div>
+</main>
+
+{% endblock content %}

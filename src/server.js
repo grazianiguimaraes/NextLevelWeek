@@ -20,7 +20,11 @@ server.get("/", (req, res) => {
 })
 
 server.get("/create-point", (req, res) => {
+ 
+ console.log(req.query)
+ 
   return res.render("create-point.html")
+
 })
 
 server.get("/search", (req, res) => {
